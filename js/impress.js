@@ -305,14 +305,16 @@
 
             stepsData[ "impress-" + el.id ] = step;
 
-            css( el, {
-                position: "absolute",
-                transform: "translate(-50%,-50%)" +
-                           translate( step.translate ) +
-                           rotate( step.rotate ) +
-                           scale( step.scale ),
-                transformStyle: "preserve-3d"
-            } );
+            if ( el.classList.contains("step-level-1") ) {														  
+				css( el, {
+					position: "absolute",
+					transform: "translate(-50%,-50%)" +
+							   translate( step.translate ) +
+							   rotate( step.rotate ) +
+							   scale( step.scale ),
+					transformStyle: "preserve-3d"
+				} );
+            }
         };
 
         // Initialize all steps.
